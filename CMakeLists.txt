@@ -13,4 +13,8 @@ add_executable(untitled1 main.c
         queue.c
         queue.h
         stack.c
-        stack.h)
+        stack.h
+        binary_tree.c
+        binary_tree.h
+        phase.c
+        phase.h)

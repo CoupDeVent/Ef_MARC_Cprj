@@ -258,6 +258,7 @@ void displayMap(t_map map)
      * display all soils with 3x3 characters
      * characters are : B for base station, '-' for plain, '~' for erg, '^' for reg, ' ' for crevasse
      */
+    printf("\nThe Map :\n");
     for (int i = 0; i < map.y_max; i++)
     {
         for (int rep = 0; rep < 3; rep++)
