@@ -23,5 +23,12 @@ int main() {
         printf("\n");
     }
     displayMap(map);
+
+
+
+    int nb_move_disp[7] = {22, 15, 7, 7, 21, 21, 7};
+
+
+
     return 0;
 }
