@@ -1,5 +1,5 @@
 # README.md
-![image](https://github.com/user-attachments/assets/2fc42b8b-9805-4324-8342-34e9dcf3ffdd)
+![image](image/rover.png)
 
 ## Installation
 
