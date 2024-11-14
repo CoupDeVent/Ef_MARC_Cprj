@@ -1,9 +1,9 @@
 # README.md
-![image](https://github.com/user-attachments/assets/2fc42b8b-9805-4324-8342-34e9dcf3ffdd)
+![image](image/rover.png)
 
 ## Installation
 
-Vous pouvez retrouver notre code sur GitHub en suivant le lien suivant : 
+Vous pouvez retrouver notre code sur GitHub en suivant [ce lien](https://github.com/CoupDeVent/MARC.git).
 
 ## Configuration
 
