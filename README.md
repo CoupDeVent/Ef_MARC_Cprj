@@ -3,7 +3,7 @@
 
 ## Installation
 
-Vous pouvez retrouver notre code sur GitHub en suivant le lien suivant : 
+Vous pouvez retrouver notre code sur GitHub en suivant [ce lien](https://github.com/CoupDeVent/MARC.git) : 
 
 ## Configuration
 
