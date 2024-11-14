@@ -6,16 +6,20 @@
 #include "binary_tree.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h> // pour rand
 
-int *nb_move_disp_phase(int *nb_move_disp){
+int *nb_move_disp_phase(){
     int nb_move_disp_phase[7];
+    int nb_move_disp[7] = {22, 15, 7, 7, 21, 21, 7};
+
+    srand(time(NULL)); // pour rand
 
     for(int k = 0; k < 8; k++){
-        int alt = rand()%7;
+        int random = (rand()%7) + 1; // rand random = (rand() % (MAX + 1 - MIN)) + MIN;
 
-        if(nb_move_disp[alt] > 0){
-            nb_move_disp_phase[alt]++;
-            nb_move_disp[alt]--; // a test
+        if(nb_move_disp[random] > 0){
+            nb_move_disp_phase[random]++;
+            nb_move_disp[random]--; // a test
         }
         else{k--;}
     }
@@ -33,7 +37,7 @@ int phase_tree(int nb_move_disp_phase){
 
     for(int i = 0; i < 7; i++){
         do{
-            phase_tree->root = create_node(NULL, i, temp_score, temp_orientation);
+            phase_tree->root = create_node(NULL, i, temp_score, temp_orientation); // mais faire par queue pour retrouver le chemin
         }while(nb_move_disp_phase[i] > 0);
     }
 }
