@@ -1,9 +1,13 @@
 # README.md
-![image](image/rover.png)
+![image](https://github.com/user-attachments/assets/2fc42b8b-9805-4324-8342-34e9dcf3ffdd)
 
 ## Installation
 
-Vous pouvez retrouver notre code sur GitHub en suivant [ce lien](https://github.com/CoupDeVent/MARC.git).
+Vous pouvez retrouver notre code sur GitHub en suivant le lien suivant : 
+
+## Configuration
+
+Le programme nécessite un interpréteur de langage C pouvant accéder à des fichiers (Ex : CLion)
 
 ## Configuration
 
@@ -11,10 +15,12 @@ Le programme nécessite un interpréteur de langage C pouvant accéder à des fi
 
 ## Utilisation :
 
-Le fichier est exécutable dans le fichier main.c
+L'utilisation de notre code se fait depuis le fichier main.c par un interpréteur compatible.
 
 <br>V0 : Prototype
 <br>V1 : Programme intermédiaire comprenant les fonctions de bases
+<br>V2 : Programme complet comprenant l'ensemble des fonctions attendues
+<br>V3 : Programme comprenant les commentaires associées aux fonctions et instructions
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
