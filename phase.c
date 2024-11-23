@@ -142,7 +142,7 @@ void game(char *map_name){
     }
     static char orientation[4][6] = {"NORTH", "EAST", "SOUTH", "WEST"};
     printf("\nRover start at : (x = %d  y = %d), %s", rover_loc.pos.x, rover_loc.pos.y, orientation[rover_loc.ori]);
-    printf("\nThe Base is at : (x = %d  y = %d)", getBaseStationPosition(map).y, getBaseStationPosition(map).x);
+    printf("\nThe Base is at : (x = %d  y = %d)\n", getBaseStationPosition(map).y, getBaseStationPosition(map).x);
 
     t_stat_game *stat_game;
     int reach_base = 0;
@@ -152,11 +152,11 @@ void game(char *map_name){
         stat_game = phase_tree(getRandomMoves(9), map, rover_loc, 0)->stat_game;
         reach_base = stat_game->reach_base;
         rover_loc = stat_game->min_node_tree->loc;
-        print_stat_game(stat_game);
+        //print_stat_game(stat_game);
         move_game[count] = stat_game->move_histo;
         count++;
     }
-    printf("\n\n\nLe Rover a atteint la Base !");
+    printf("\nLe Rover a atteint la Base !");
     printf("\n    - En %d phases", count);
     printf("\n    - Avec les mouvements : ");
     for(int j = 0; j < count; j++){
