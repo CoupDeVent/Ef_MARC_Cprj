@@ -52,6 +52,7 @@ t_stat_game *create_node_phase(t_move *nb_move_disp_phase, t_node *father, int d
 
     for(int k = 0; k < 10 - depth; k++){
         move_histo[depth-1] = nb_move_disp_phase[num_node + k]; // remise zero move du node après modif temp_move_phase (après avoir deja utilisé dans un node du mm niveau avec mm père)
+
         // calcule pos post mov et si possible et score //
         t_localisation loc_node = move(loc, move_histo[depth-1]); // calcule loc post move
         if(isValidLocalisation(loc_node.pos, map.x_max, map.y_max) == 0){ // score = cost_undef si la loc n'est pas valide donc a l'exte de la map
@@ -102,6 +103,10 @@ t_tree *phase_tree(t_move *nb_move_disp_phase, t_map map, t_localisation rover_l
 
     phase_tree->stat_game = create_node_phase(nb_move_disp_phase, phase_tree->root, 1, map, rover_loc, move_histo, 0, phase_tree->stat_game, reg);
 
+    for(int k = phase_tree->stat_game->min_node_tree->depth; k < 6; k++){ // supr move en trop
+        move_histo[k] = NONE;
+    }
+
     return phase_tree;
 }
 
@@ -147,7 +152,7 @@ void game(char *map_name){
         stat_game = phase_tree(getRandomMoves(9), map, rover_loc, 0)->stat_game;
         reach_base = stat_game->reach_base;
         rover_loc = stat_game->min_node_tree->loc;
-
+        print_stat_game(stat_game);
         move_game[count] = stat_game->move_histo;
         count++;
     }
