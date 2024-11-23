@@ -7,7 +7,6 @@
 #include "map.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <time.h> // pour rand
 #include <intrin.h>
 
@@ -87,11 +86,13 @@ t_stat_game *create_node_phase(t_move *nb_move_disp_phase, t_node *father, int d
 t_tree *phase_tree(t_move *nb_move_disp_phase, t_map map, t_localisation rover_loc, int reg){
     t_move move_histo[6] = {NONE, NONE, NONE, NONE, NONE, NONE};
 
+    /*
     printf("\n\nMove Phase :\n");
     for(int k = 0; k < 9; k++){
         printf("%s ", getMoveAsString(nb_move_disp_phase[k]));
     }
     printf("\n");
+     */
 
     t_tree *phase_tree = (t_tree *)malloc(sizeof(t_tree));
     phase_tree->root = create_node(NULL, NONE, map.costs[rover_loc.pos.x][rover_loc.pos.y], rover_loc, 0, -1);
