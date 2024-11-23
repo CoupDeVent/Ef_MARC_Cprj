@@ -151,7 +151,7 @@ void game(char *map_name){
         move_game[count] = stat_game->move_histo;
         count++;
     }
-    printf("\n\n\nLe Rover a attain la Base !");
+    printf("\n\n\nLe Rover a atteint la Base !");
     printf("\n    - En %d phases", count);
     printf("\n    - Avec les mouvements : ");
     for(int j = 0; j < count; j++){
