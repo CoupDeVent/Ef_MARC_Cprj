@@ -1,5 +1,5 @@
-# README.md
-![image](https://github.com/user-attachments/assets/2fc42b8b-9805-4324-8342-34e9dcf3ffdd)
+# MARC
+![image](/image/rover.png)
 
 ## Installation
 
@@ -65,7 +65,6 @@ En 2028, une tempête solaire intense a endommagé le rover MARC (MArs Rover Car
   - Erg: diminue le prochain mouvement de 1
   - Reg: limite à 4 mouvements dans la phase suivante
   - Crevasse: fin du rover
-  - Pente: déplacement d'une case dans le sens de la pente
 
 ## Objectif
 
