@@ -64,7 +64,7 @@ t_stat_game *create_node_phase(t_move *nb_move_disp_phase, t_node *father, int d
         else{score = COST_UNDEF;}
 
         // crea node et recur //
-        if(score != COST_UNDEF){
+        if(score != COST_UNDEF && depth <= 5 - reg){
             father->children[k] = create_node(father, move_histo[depth-1], score, loc_node, depth, num_node + k); // crea node actu
 
             if(father->children[k]->score == 0){
@@ -104,7 +104,7 @@ t_tree *phase_tree(t_move *nb_move_disp_phase, t_map map, t_localisation rover_l
     phase_tree->stat_game = create_node_phase(nb_move_disp_phase, phase_tree->root, 1, map, rover_loc, move_histo, 0, phase_tree->stat_game, reg);
 
     for(int k = phase_tree->stat_game->min_node_tree->depth; k < 6; k++){ // supr move en trop
-        move_histo[k] = NONE;
+        phase_tree->stat_game->move_histo[k] = NONE;
     }
 
     return phase_tree;
@@ -149,14 +149,20 @@ void game(char *map_name){
     int count = 0;
     t_move **move_game = (t_move **)malloc(255 * sizeof(t_move *));
     while(reach_base != 1){
-        stat_game = phase_tree(getRandomMoves(9), map, rover_loc, 0)->stat_game;
+        if(map.costs[rover_loc.pos.x][rover_loc.pos.y] >= 10000 && map.costs[rover_loc.pos.x][rover_loc.pos.y] != COST_UNDEF){
+            stat_game = phase_tree(getRandomMoves(9), map, rover_loc, 1)->stat_game;
+            //printf("\nReg phase. (-1 move)");
+        }
+        else{
+            stat_game = phase_tree(getRandomMoves(9), map, rover_loc, 0)->stat_game;
+        }
         reach_base = stat_game->reach_base;
         rover_loc = stat_game->min_node_tree->loc;
         //print_stat_game(stat_game);
         move_game[count] = stat_game->move_histo;
         count++;
     }
-    printf("\nLe Rover a atteint la Base !");
+    printf("\n\nLe Rover a atteint la Base !");
     printf("\n    - En %d phases", count);
     printf("\n    - Avec les mouvements : ");
     for(int j = 0; j < count; j++){
